@@ -1,2 +1,2 @@
-# OCR für den Arbeitskreis TEI
+# OCR für TU9
 Folien und Materialien

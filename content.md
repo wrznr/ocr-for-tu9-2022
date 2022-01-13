@@ -858,6 +858,25 @@ den Nacht begegnen könnte, in Gnaden bewahren
 
 # Texterkennung
 
+- Tabelle mit fester Anzahl Zeilen und variabler Anzahl Spalten
+- schwarze (1) und weiße (0) Pixel
+    + **endliche Anzahl** mgl. Belegungen
+- charakteristische Abfolge pro Zeichen (und Wort)
+
+<center>
+<img src="img/detail_mask.png" width="200px" />
+</center>
+<p>↓</p>
+<center>
+<img src="img/pixel_cols.png" width="200px" />
+</center>
+
+
+
+---
+
+# Texterkennung
+
 - Schritt 3: Textermittlung
     + **Übergangswahrscheinlichkeiten** zwischen Vektoren
     + Rückgriff auf (offline) trainiertes **Modell**

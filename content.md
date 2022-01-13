@@ -25,10 +25,10 @@ layout: true
       <td style="text-align:left">Referat 4.3</td>
     </tr>
     <tr>
-      <td style="font-size:8pt"><b>17. Juni 2021</b></td>
+      <td style="font-size:8pt"><b>13. Januar 2022</b></td>
     </tr>
     <tr>
-      <td style="font-size:8pt">Arbeitskreis TEI Dresden</td>
+      <td style="font-size:8pt">TU9 Veranstaltungsreihe zu forschungsnahen Services</td>
     </tr>
   </table>
 </div>
@@ -39,15 +39,15 @@ class: title-slide
 count: false
 
 # OCR mit Enthusiasmus
-## Vom Bild zur TEI-Edition – selbst!
+## Vom Bild zum Volltext – selbst!
 
 ---
 
 # Überblick
 
 - methodische und technologische Grundlagen von OCR
+- Koordinierte Förderinitiative zur Weiterentwicklung von Verfahren der OCR
 - Hands-on mit Tesseract
-- Training eigener OCR-Modelle
 
 ---
 
@@ -581,7 +581,7 @@ count: false
     + Festlegung buchspezifischer Parameter durch den Nutzer (Spalten, Kolumnentitel etc.)
     + manuelle Nachkorrektur über Benutzeroberfläche
     + kein Training möglich, keine API
-- Generisches Segmentierungswerkzeug `dhSegment`
+- Generisches Segmentierungswerkzeug [`eynollah`](https://github.com/qurator-spk/eynollah)
     + Layoutanalyse per **Pixelklassifizierung**
 
 ---
@@ -745,6 +745,20 @@ count: false
 
 ---
 
+# *Layoutanalyse* per Pixelklassifizierung
+
+- **Vorteile**:
+    + trainierbares Verfahren
+        * Erzeugung domänenspezifischer Erkennungsmodelle
+        * mit Hilfe manuell annotierter Daten (e.g. aus Larex)
+    + keine Programmierkenntnisse für Anpassung erforderlich
+    + Nachnutzung aktueller Technologien des maschinellen Lernens
+- **Nachteile**:
+    + höher Aufwände durch Trainingsmaterialerstellung
+    + höhere Laufzeiten (i.e. der Algorithmen), höherer Speicherbedarf zur Laufzeit
+
+---
+
 class: part-slide
 count: false
 
@@ -895,10 +909,50 @@ den Nacht begegnen könnte, in Gnaden bewahren
         * datengetriebene Texterkennung (nur sehr wenige Modelle vorhanden)
         * für OCR und **HTR** verwendbar
         * prominente Ableger: [**kraken**](https://kraken.re) und [**Calamari**](https://github.com/Calamari-OCR/calamari)
-    + [**OCR-D**](https://ocr-d.de/): Workflow-Engine
-        * Orchestrierung verschiedener Open-Source-Pakete zu stabilen Workflows
-        * gleichzeitig DFG-Förderprogramm zur Verbesserung von OCR für historische Drucke
-        * SLUB als maßgebliche Entwicklungseinrichtung
+    + [**Transkribus**](https://readcoop.eu/transkribus/?sc=Transkribus): kommerzielle OCR und HTR Software
+        * elaborierte Verfahren zu Text- und Layouterkennung auf Basis statistischer Modelle
+        * Fokus **Handschriftenerkennung**
+        * gleichzeitig** Annotationsumgebung** für Trainingsdaten
+        * sehr gute Ergebnisse mit relativ wenig Aufwand erreichbar
+
+---
+
+class: part-slide
+count: false
+
+# OCR-D
+
+---
+
+# OCR-D
+
+- Koordinierte Förderinitiative zur Verbesserung von Verfahren der OCR
+    + Fokus *Verzeichnise der im deutschen Sprachbereich erschienenen Drucke*
+    + umfangreiche Beteiligung wissenschaftlicher Bibliotheken
+- DFG finanziert seit 2015
+    + 2015-2017: Bestandsaufnahme
+    + 2018-2020: Entwicklung von Prototypen
+    + 2021-2023: Überführung in Produktivbetrieb
+- Koordinierungsprojekt plus Modul- bzw. Implementierungsprojekte
+    + HAB Wolfenbüttel, BBAW, *BSB München*, Stabi Berlin, *KIT*, UB Göttingen, GWDG
+    + SLUB Dresden, UB Mannheim, UB Braunschweig, ULB Halle, UB Würzburg ...
+- [**OCR-D**](https://ocr-d.de/)
+
+---
+
+# OCR-D
+
+- drei Säulen
+    + konzertierte (Weiter-)Entwicklung von **Open Source** OCR-Werkzeugen
+    + Spezifikationen und Good Practices
+        * Schnittstellen und Datenformate (METS-XML, MODS, PAGE-XML, ALTO-XML ...)
+    + Workflowengine
+        * Zusammenführen der einzelnen Werkzeuge und Verwendung der Spezifikationen
+        * hoher Grad an Modularität und Transparenz
+- Aufbau und Pflege einer Community
+    + regelmäßige, offene Meetings: https://ocr-d.de/de/community
+    + Chat auf https://gitter.im/OCR-D/Lobby
+    * Entwicklung auf [`github`](https://github.com/OCR-D) von Anfang an
 
 ---
 
@@ -1730,7 +1784,7 @@ count: false
     + `Scantailor`: Programm zur (semi-)automatischen Bildoptimierung für OCR
     + `olena`: umfangreiche Bibliothek zur Dokumentenverarbeitung
         * enthält mehrere Binarisierungsverfahren
-        * (Tesseract-eigene Binarisierung ist sehr schlecht)
+        * (Tesseract-eigene Binarisierung ist nicht immer funktional)
 .cols[
 .fifty[
 <p style="font-size:1.1rem">

@@ -864,11 +864,13 @@ den Nacht begegnen könnte, in Gnaden bewahren
 - charakteristische Abfolge pro Zeichen (und Wort)
 
 <center>
-<img src="img/detail_mask.png" width="200px" />
+<img src="img/detail_mask.png" width="190px" />
 </center>
-<p>↓</p>
 <center>
-<img src="img/pixel_cols.png" width="200px" />
+<p>↓</p>
+</center>
+<center>
+<img src="img/pixel_cols.png" width="190px" />
 </center>
 
 

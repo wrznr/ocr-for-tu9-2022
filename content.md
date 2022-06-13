@@ -1849,5 +1849,5 @@ class: part-slide
 # Many thanks for your attention!
 
 <center>
-<a href="https://wrznr.github.io/slide-template/">wrznr.github.io/slide-template</a>
+<a href="https://wrznr.github.io/ocr-for-tu9-2022/">wrznr.github.io/ocr-for-tu9-2022</a>
 </center>
